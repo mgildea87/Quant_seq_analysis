@@ -1,4 +1,5 @@
 #!/bin/bash
+#.fa and .gff files were current versions downloaded from SGD.
 
 genomefa="/home/mag456/Quantseq2.2017/star_genome/cere_gen.fa"
 genomegff="/home/mag456/Quantseq2.2017/star_genome/cere_gen.gff"
@@ -7,7 +8,7 @@ path="/home/mag456/Quantseq2.2017/"
 outpath="/home/mag456/Quantseq2.2017/star_alignment_files/"
 readlength=75
 
-#STAR --runMode genomeGenerate --genomeDir $genomedir --genomeFastaFiles $genomefa --sjdbGTFfile $genomegff --sjdbOverhang $(($readlength -1)) --sjdbGTFtagExonParentTranscript Parent --sjdbGTFfeatureExon CDS
+STAR --runMode genomeGenerate --genomeDir $genomedir --genomeFastaFiles $genomefa --sjdbGTFfile $genomegff --sjdbOverhang $(($readlength -1)) --sjdbGTFtagExonParentTranscript Parent --sjdbGTFfeatureExon CDS
 
 for i in $path*trim.fastq
 do
